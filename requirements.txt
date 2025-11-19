@@ -5,3 +5,6 @@ seaborn
 scikit-learn
 Flask
 joblib
+python-dotenv   #.env ko read karta h 
+mysql-connector-python
+pymysql

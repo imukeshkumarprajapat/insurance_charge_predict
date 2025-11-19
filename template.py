@@ -6,7 +6,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-project_name="isurance_charge_pridict"
+project_name="insurance_charge_predict"
 
 list_of_files=[
     f"src/{project_name}/__init__.py",
