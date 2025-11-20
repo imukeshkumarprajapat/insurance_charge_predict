@@ -8,3 +8,7 @@ joblib
 python-dotenv   #.env ko read karta h 
 mysql-connector-python
 pymysql
+ipykernel
+scipy
+catboot
+xgboost
