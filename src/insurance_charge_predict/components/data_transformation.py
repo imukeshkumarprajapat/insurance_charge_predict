@@ -166,7 +166,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
-from src.insurance_charge_predict.exception import CustomeException
+from src.insurance_charge_predict.exception import CustomException
 from src.insurance_charge_predict.logger import logging
 from src.insurance_charge_predict.utils import save_object
 
@@ -266,7 +266,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.impute import SimpleImputer
-from src.insurance_charge_predict.exception import CustomeException
+from src.insurance_charge_predict.exception import CustomException
 from src.insurance_charge_predict.logger import logging
 from src.insurance_charge_predict.utils import save_object
 
@@ -356,4 +356,4 @@ class DataTransformation:
             return train_arr, test_arr, self.data_transformation_config.preprocessor_obj_file_path
 
         except Exception as e:
-            raise CustomeException(e, sys)
+            raise CustomException(e, sys)

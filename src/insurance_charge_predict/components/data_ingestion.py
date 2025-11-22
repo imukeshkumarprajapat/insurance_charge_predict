@@ -1,7 +1,7 @@
 import sys
 import os
 
-from src.insurance_charge_predict.exception import CustomeException
+from src.insurance_charge_predict.exception import CustomException
 from src.insurance_charge_predict.logger import logging
 import pandas as pd
 from src.insurance_charge_predict.utils import read_sql_data
@@ -46,4 +46,4 @@ class DataIngestion:
             )
 
         except Exception as e:
-            raise CustomeException(e, sys)
+            raise CustomException(e, sys)
