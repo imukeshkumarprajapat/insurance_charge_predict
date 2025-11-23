@@ -9,7 +9,11 @@ from sklearn.metrics import r2_score
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
+from catboost import CatBoostRegressor
 
+import mlflow
+
+import mlflow.sklearn
 from src.insurance_charge_predict.exception import CustomException
 from src.insurance_charge_predict.logger import logging
 #from src.insurance_charge_predict import save_object,evaluate_models
@@ -17,7 +21,7 @@ from src.insurance_charge_predict.logger import logging
 from src.insurance_charge_predict.utils import save_object, evalute_models
 
 
-from catboost import CatBoostRegressor
+
 
 from sklearn.ensemble import (
     AdaBoostRegressor,
@@ -131,6 +135,61 @@ class ModelTrainger:
 
 
             best_model=models[best_model_name]
+
+
+        
+            print("this is the best model:")
+            print(best_model_name)
+
+
+
+            model_names=list(params.keys())
+
+            actual_model=" "
+
+            for model in model_names:
+                if best_model_name==model:
+                    actual_model=actual_model+model
+            
+            best_params=params[actual_model.strip()]
+            print(f"Model selected: '{actual_model}'")
+
+            print("\nAll Model Results:")
+            print("Model Name\t\tR2_Score")
+            for name, score in model_report.items():
+              print(f"{name:25} {score:.6f}")
+
+
+
+            mlflow.set_tracking_uri("https://dagshub.com/imukeshkumarprajapat/insurance_charge_predict.mlflow")
+            mlflow.set_experiment("Default")
+            tracking_url_type_store=urlparse(mlflow.get_tracking_uri()).scheme
+
+            #mlflow track
+            with mlflow.start_run():
+                predicted_qualities=best_model.predict(X_test)
+                (rmse,mae,r2)=self.eval_metics(y_test, predicted_qualities)
+                #mlflow.log_param(best_model)
+                mlflow.log_param("best_model", best_model_name.strip())  # ✅ Correct
+                mlflow.log_metric("rmse",rmse)
+                mlflow.log_metric("r2", r2)
+                mlflow.log_metric("mae", mae)
+                #model registery does not work with file store
+                
+            if tracking_url_type_store != "file":
+                mlflow.sklearn.log_model(best_model, artifact_path="model")
+                #mlflow.sklearn.log_model(best_model, "model")
+               # mlflow.sklearn.save_model(best_model, path="artifacts/best_model")
+                
+                
+            else:
+                mlflow.sklearn.log_model(best_model, "model")
+
+            
+
+
+
+
 
 
             if best_model_score<0.6:

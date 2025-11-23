@@ -12,3 +12,4 @@ ipykernel
 scipy
 catboot
 xgboost
+mlflow

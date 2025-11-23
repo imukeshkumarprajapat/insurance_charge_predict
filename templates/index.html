@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Portal</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #eef2f7;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .plan {
+      margin-bottom: 30px;
+      padding: 20px;
+      border-left: 5px solid #3498db;
+      background: #f9fbfd;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+    .plan:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .plan h3 {
+      margin-top: 0;
+      color: #34495e;
+    }
+    .plan p {
+      margin: 10px 0 0;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background: #2980b9;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Insurance Portal</h1>
+    <p>Protecting your health, family, and future</p>
+  </header>
+
+  <div class="container">
+    <h2>Health Insurance Plans</h2>
+
+    <div class="plan">
+      <h3>Basic Health Plan</h3>
+      <p>✔ Hospitalization coverage up to ₹5 Lakhs<br>
+         ✔ Cashless treatment at 5000+ hospitals<br>
+         ❌ No maternity coverage</p>
+    </div>
+
+    <div class="plan">
+      <h3>Family Floater Plan</h3>
+      <p>✔ Covers entire family under one policy<br>
+         ✔ Pre & post hospitalization expenses<br>
+         ✔ Free annual health check-up</p>
+    </div>
+
+    <div class="plan">
+      <h3>Premium Health Plan</h3>
+      <p>✔ Coverage up to ₹25 Lakhs<br>
+         ✔ Includes maternity & newborn cover<br>
+         ✔ Critical illness protection</p>
+    </div>
+
+    <!-- Redirect Button -->
+    <a href="predictdata" class="btn">Go to Home Page</a>
+  </div>
+
+  <footer>
+    © 2025 Insurance Portal | Designed for clarity and trust
+  </footer>
+</body>
+</html>
