@@ -5,14 +5,14 @@ seaborn
 scikit-learn
 Flask
 joblib
-python-dotenv   #.env ko read karta h 
+python-dotenv  
 mysql-connector-python
 pymysql
-ipykernel
 scipy
 mlflow
 streamlit
 catboost
 xgboost
+
 
 
