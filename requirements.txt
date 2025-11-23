@@ -10,8 +10,9 @@ mysql-connector-python
 pymysql
 ipykernel
 scipy
-catboot
-xgboost
 mlflow
 streamlit
+catboost
+xgboost
+
 
