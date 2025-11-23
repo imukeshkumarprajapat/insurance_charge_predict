@@ -13,3 +13,4 @@ scipy
 catboot
 xgboost
 mlflow
+streamlit
